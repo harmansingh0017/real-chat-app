@@ -10,15 +10,15 @@ const leaveRoom = require('./utils/leave-room'); // Add this
 
 app.use(cors()); // Add cors middleware
 
-const server = http.createServer(app); // Add this
+const corsOrigin = process.env.SOCKETIO_CORS_ORIGIN || 'http://localhost:3000';
 
-// Create an io server and allow for CORS from http://localhost:3000 with GET and POST methods
 const io = new Server(server, {
   cors: {
-    origin: 'http://client:3000',
+    origin: corsOrigin,
     methods: ['GET', 'POST'],
   },
 });
+
 
 const CHAT_BOT = 'ChatBot';
 let chatRoom = ''; // E.g. javascript, node,...
