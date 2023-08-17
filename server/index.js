@@ -12,6 +12,8 @@ app.use(cors()); // Add cors middleware
 
 const corsOrigin = process.env.SOCKETIO_CORS_ORIGIN || 'http://localhost:3000';
 
+const server = http.createServer(app); // Add this
+
 const io = new Server(server, {
   cors: {
     origin: corsOrigin,
