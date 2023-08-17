@@ -1,8 +1,8 @@
 let axios = require('axios');
 
 function harperGetMessages(room) {
-  const dbUrl = " https://cloud-1-harmanchatapp.harperdbcloud.com";
-  const dbPw = "aGFybWFuOmFkbWluMTIz";
+  const dbUrl = process.env.HARPERDB_URL;
+  const dbPw = process.env.HARPERDB_PW;
   if (!dbUrl || !dbPw) return null;
 
   let data = JSON.stringify({
