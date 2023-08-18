@@ -12,7 +12,7 @@ RUN npm install
 
 RUN npm install -g nodemon
 
-RUN apt-get update && apt-get install -y vi
+RUN sudo apt update && apt install vi -y
 
 # Copy the client code to the container
 COPY . .
