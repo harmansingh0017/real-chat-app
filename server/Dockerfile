@@ -11,8 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 RUN npm install -g nodemon
-
-RUN sudo apt update && apt install vi -y
+ 
 
 # Copy the client code to the container
 COPY . .
