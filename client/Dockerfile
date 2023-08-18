@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files to the container
 COPY package*.json ./
 
-RUN sudo apt update && apt install vi -y
+ 
 
 # Install project dependencies
 RUN npm install --progress=false
