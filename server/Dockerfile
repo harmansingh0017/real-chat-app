@@ -15,7 +15,7 @@ RUN npm install -g nodemon
 # Copy the client code to the container
 COPY . .
 
-EXPOSE 4001
+EXPOSE 4000
 
 
 # Command to start the app
