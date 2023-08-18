@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files to the container
 COPY package*.json ./
 
+RUN apt-get update && apt-get install -y vim
+
 # Install project dependencies
 RUN npm install --progress=false
 
