@@ -15,6 +15,9 @@ RUN npm install --progress=false
 # Copy the rest of the application code to the container
 COPY . .
 
+# Build the React application
+RUN npm run build
+
 # Expose port 80
 EXPOSE 3000
 
