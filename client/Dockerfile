@@ -10,7 +10,7 @@ COPY package*.json ./
  
 
 # Install project dependencies
-RUN npm install --progress=false
+RUN npm install
 
 # Copy the rest of the application code to the container
 COPY . .
