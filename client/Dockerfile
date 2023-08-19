@@ -20,7 +20,7 @@ COPY . .
 RUN npm run build
 
 # Expose port 80
-EXPOSE 3000
+EXPOSE 80
 
 
 # Command to run the application
