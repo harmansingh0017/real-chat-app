@@ -7,10 +7,11 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files to the container
 COPY package*.json ./
 
- 
+ENV PATH /app/node_modules/.bin:$PATH
 
-# Install project dependencies
-RUN npm install
+RUN npm install --silent
+
+RUN npm install react-scripts@3.4.1 -g --silent
 
 # Copy the rest of the application code to the container
 COPY . .
