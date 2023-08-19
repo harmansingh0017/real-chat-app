@@ -10,7 +10,7 @@ const leaveRoom = require('./utils/leave-room'); // Add this
 
 app.use(cors()); // Add cors middleware
 
-const corsOrigin = process.env.SOCKETIO_CORS_ORIGIN || 'http://172.21.0.3:3000';
+const corsOrigin = process.env.SOCKETIO_CORS_ORIGIN || 'http://172.21.0.2:3000';
 
 const server = http.createServer(app); // Add this
 
