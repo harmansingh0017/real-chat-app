@@ -4,7 +4,7 @@ metadata:
   name: c-c-service
 spec:
   ports:
-  - port: 3000
+  - port: 80
     targetPort: c-c-port
     protocol: TCP
   selector:
