@@ -20,4 +20,4 @@ EXPOSE 4000
 
 
 # Command to start the app
-CMD [ "nodemon", "index.js", "-L" ]
+CMD [ "node", "index.js" ]
