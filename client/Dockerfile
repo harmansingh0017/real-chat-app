@@ -18,10 +18,6 @@ COPY . .
 # Expose port 80
 EXPOSE 3000
 
-# Build the React application
-RUN npm run build
-
-
 
 # Command to run the application
 CMD ["npm", "start"]
