@@ -1,4 +1,3 @@
- 
 version: '3'
 services:
   client:
@@ -7,9 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    networks:
-      app-network:
-        ipv4_address: 172.21.0.2  # Replace with the desired IP address
+    network_mode: host  # Connect the container to the host network
+    # Remove the "networks" section for the client service
 
   server:
     build:
@@ -17,16 +15,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4000:4000"
-    environment: # Add environment variable for CORS origin
-      SOCKETIO_CORS_ORIGIN: "http://172.21.0.2:3000"
+    environment:
+      SOCKETIO_CORS_ORIGIN: "http://client:3000"
     command: ["sh", "-c", "sleep 10 && nodemon index.js"]
-    networks:
-      app-network:
-        ipv4_address: 172.21.0.3  # Replace with the desired IP address
-
-networks:
-  app-network:
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.21.0.0/16  # Replace with your desired subnet
+    network_mode: host  # Connect the container to the host network
+    # Remove the "networks" section for the server service
