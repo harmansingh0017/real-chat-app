@@ -6,8 +6,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    network_mode: host  # Connect the container to the host network
-    # Remove the "networks" section for the client service
+    environment:
+      - REACT_APP_SERVER_URL=http://server:4000 # Set the server URL
+    depends_on:
+      - server
 
   server:
     build:
@@ -18,5 +20,4 @@ services:
     environment:
       SOCKETIO_CORS_ORIGIN: "http://client:3000"
     command: ["sh", "-c", "sleep 10 && nodemon index.js"]
-    network_mode: host  # Connect the container to the host network
-    # Remove the "networks" section for the server service
+     
