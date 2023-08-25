@@ -5,7 +5,6 @@ import Chat from './pages/chat';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import io from 'socket.io-client';
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const socket = io.connect('http://server:4000');
 
 
