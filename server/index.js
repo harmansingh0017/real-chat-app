@@ -12,7 +12,22 @@ const corsOptions = {
   methods: ['GET', 'POST'],
 };
 
-app.use(cors(corsOptions)); // Add cors middleware
+const express = require('express');
+const app = express();
+
+// Define a health check route
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
+// ... other routes and server configuration ...
+
+app.listen(4000, () => {
+  console.log('Server is running on port 4000');
+});
+
+
+app.use(cors()); // Add cors middleware
 
 const corsOrigin = 'http://192.168.56.38:80';
 
