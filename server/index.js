@@ -7,8 +7,12 @@ const { Server } = require('socket.io');
 const harperSaveMessage = require('./services/harper-save-message');
 const harperGetMessages = require('./services/harper-get-messages');
 const leaveRoom = require('./utils/leave-room'); // Add this
+const corsOptions = {
+  origin: 'http://192.168.56.38:80', // Replace with the correct frontend URL
+  methods: ['GET', 'POST'],
+};
 
-app.use(cors()); // Add cors middleware
+app.use(cors(corsOptions)); // Add cors middleware
 
 const corsOrigin = 'http://192.168.56.38:80';
 
