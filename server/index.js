@@ -10,7 +10,7 @@ const leaveRoom = require('./utils/leave-room'); // Add this
 
 app.use(cors()); // Add cors middleware
 
-const corsOrigin = 'http://client:3000';
+const corsOrigin = 'http://client:80';
 
 const server = http.createServer(app); // Add this
 
