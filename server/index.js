@@ -12,8 +12,7 @@ const corsOptions = {
   methods: ['GET', 'POST'],
 };
 
-const express = require('express');
-const app = express();
+ 
 
 // Define a health check route
 app.get('/api/health', (req, res) => {
