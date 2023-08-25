@@ -1,23 +1,6 @@
-# Use the official Node.js image as the base image
-FROM node:16-alpine
-
-# Set the working directory within the container
-WORKDIR /app
-
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-RUN npm install -g nodemon
- 
-
-# Copy the client code to the container
+FROM node:alpine  
+WORKDIR /server
 COPY . .
-
-EXPOSE 4000
-
-
-# Command to start the app
-CMD [ "nodemon", "index.js" ]
+RUN npm install
+EXPOSE 4000 
+CMD ["node", "index.js"]
