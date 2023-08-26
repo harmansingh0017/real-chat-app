@@ -19,5 +19,5 @@ services:
       - app_network
 
 networks:
-    app-network:
-        driver: bridge
+  app_network:
+    driver: bridge
