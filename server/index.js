@@ -7,28 +7,11 @@ const { Server } = require('socket.io');
 const harperSaveMessage = require('./services/harper-save-message');
 const harperGetMessages = require('./services/harper-get-messages');
 const leaveRoom = require('./utils/leave-room'); // Add this
-const corsOptions = {
-  origin: 'http://frontend:80', // Replace with the correct frontend URL
-  methods: ['GET', 'POST'],
-};
-
  
-
-// Define a health check route
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok' });
-});
-
-// ... other routes and server configuration ...
-
-app.listen(4000, () => {
-  console.log('Server is running on port 4000');
-});
-
 
 app.use(cors()); // Add cors middleware
 
-const corsOrigin = 'http://192.168.56.38:80';
+const corsOrigin = 'http://frontend:80';
 
 const server = http.createServer(app); // Add this
 
@@ -118,6 +101,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(4000, '0.0.0.0', () => {
+server.listen(3001, '0.0.0.0', () => {
   console.log('Server is running on port 4000');
 });
