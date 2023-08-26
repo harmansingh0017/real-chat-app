@@ -20,5 +20,5 @@ spec:
         image: {{ .Values.image.server.repository }}
         ports:
         - name: c-s-port
-          containerPort: {{ .Values.image.server.port }}
+          containerPort: 4000
       
