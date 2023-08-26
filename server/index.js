@@ -9,9 +9,9 @@ const harperGetMessages = require('./services/harper-get-messages');
 const leaveRoom = require('./utils/leave-room'); // Add this
  
 
-app.use(cors({ origin: 'http://192.168.0.150' })); // Add cors middleware
+app.use(cors({ origin: process.env.FRONTEND_URL })); // Add cors middleware
 
-const corsOrigin = 'http://192.168.0.150';
+const corsOrigin = process.env.FRONTEND_URL;
 
 const server = http.createServer(app); // Add this
 
