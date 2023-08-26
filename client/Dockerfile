@@ -11,7 +11,7 @@ COPY ./client/package*.json ./
 RUN npm install
 
 # Copy the entire app to the container
-COPY ./client ./
+COPY . .
 
 # Build the app
 RUN npm run build
