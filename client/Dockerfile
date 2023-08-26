@@ -2,16 +2,16 @@
 FROM node:14 as build
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /app/client
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY ./client/package*.json ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the entire app to the container
-COPY . .
+COPY ./client ./
 
 # Build the app
 RUN npm run build
@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the built app from the previous stage
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/client/build /usr/share/nginx/html
 
 # Expose the port the app runs on
 EXPOSE 80
