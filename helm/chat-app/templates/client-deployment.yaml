@@ -20,5 +20,5 @@ spec:
         image: {{ .Values.image.client.repository }}
         ports:
         - name: c-c-port
-          containerPort: {{ .Values.image.client.port }}
+          containerPort: 80
       
