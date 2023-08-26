@@ -5,7 +5,7 @@ FROM node:14 as build
 WORKDIR /app/client
 
 # Copy package.json and package-lock.json to the working directory
-COPY ./client/package*.json ./
+COPY ./package*.json ./
 
 # Install dependencies
 RUN npm install
