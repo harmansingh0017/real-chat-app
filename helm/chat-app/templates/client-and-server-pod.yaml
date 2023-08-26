@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-and-server-pod
+spec:
+  containers:
+    - name: client
+      image: {{ .Values.image.client.repository }}
+      ports:
+        - containerPort: {{ .Values.image.client.port }}
+    - name: server
+      image: {{ .Values.image.server.repository }}
+      ports:
+        - containerPort: {{ .Values.image.server.port }}
