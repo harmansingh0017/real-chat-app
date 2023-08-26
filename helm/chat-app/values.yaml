@@ -7,10 +7,10 @@ replicaCount: 1
 image:
   client:
     repository: "harmans497/chat-app-client"
-    tag: ""
+    port: 80
   server:
     repository: "harmans497/chat-app-server"
-    tag: ""
+    port: 3001
 
 
 imagePullSecrets: []
