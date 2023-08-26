@@ -14,7 +14,7 @@ services:
       context: .
       dockerfile: server/Dockerfile
     ports:
-      - "4000:4000"
+      - "3001:3001"
     networks:
       - app_network
 
