@@ -4,9 +4,6 @@ metadata:
   name: c-c-service
 spec:
   ports:
-  - port: 80
-    targetPort: c-c-port
-    protocol: TCP
-  selector:
-    app: c-c
-  type: LoadBalancer
+    - protocol: TCP
+      port: {{ .Values.service.port }}
+      targetPort: c-c-port
