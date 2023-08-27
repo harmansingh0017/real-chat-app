@@ -1,0 +1,24 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: c-c
+  labels: 
+    app: c-c
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: c-c
+  template:
+    metadata:
+      labels:
+        app: c-c
+    spec:
+      containers:
+      - name: c-c-app
+        image: {{ .Values.image.client.repository }}
+        ports:
+        - name: c-c-port
+          containerPort: 80
+      
