@@ -5,7 +5,8 @@ import Chat from './pages/chat';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import io from 'socket.io-client';
 
-const socket = io.connect(process.env.SERVER_ADDRESS);
+const socket = io.connect(window.REACT_APP_SERVER_ADDRESS);
+
 
 
 function App() {
