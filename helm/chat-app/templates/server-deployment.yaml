@@ -18,6 +18,9 @@ spec:
       containers:
       - name: c-s-app
         image: {{ .Values.image.server.repository }}
+        env:
+        - name: CLIENT_ADDRESS
+          value: "http://c-c-service:80"
         ports:
         - name: c-s-port
           containerPort: 4000
