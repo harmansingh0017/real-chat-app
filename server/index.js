@@ -101,6 +101,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3001, '0.0.0.0', () => {
-  console.log('Server is running on port 3001');
+server.listen(4000, '0.0.0.0', () => {
+  console.log('Server is running on port 4000');
 });
