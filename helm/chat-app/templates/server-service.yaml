@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
   - port: 4000
-    targetPort: c-s-port
+    targetPort: 4000
     protocol: TCP
   selector:
     app: c-s
