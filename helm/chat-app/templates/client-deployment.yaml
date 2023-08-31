@@ -20,7 +20,7 @@ spec:
         image: {{ .Values.image.client.repository }}
         env:
         - name: SERVER_ADDRESS
-          value: "http://c-s-service-name:4000"
+          value: "http://c-s-service:4000"
         ports:
         - name: c-c-port
           containerPort: 80
