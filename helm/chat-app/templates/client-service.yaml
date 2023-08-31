@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: c-c-port
+    targetPort: 80
     protocol: TCP
   selector:
     app: c-c
